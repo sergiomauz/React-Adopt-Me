@@ -1,20 +1,20 @@
 import PetFinder from '../api/PetFinder';
-import { GET_PETS_LIST, SHOW_PET } from './types';
+import { GET_PETS_LIST, GET_PET_INFO } from './types';
 
-const getPetsList = filterParams => dispatch => {
-  const request = PetFinder().petsList(filterParams);
+const getPetsList = filterParams => async dispatch => {
+  const requestedData = await PetFinder().getPetsList(filterParams);
   dispatch({
     type: GET_PETS_LIST,
-    payload: request.data,
+    payload: requestedData,
   });
 };
 
-const getPet = id => dispatch => {
-  const request = PetFinder().showPet(id);
+const getPetInfo = id => dispatch => {
+  const requestedData = PetFinder().getPetInfo(id);
   dispatch({
-    type: SHOW_PET,
-    payload: request.data,
+    type: GET_PET_INFO,
+    payload: requestedData,
   });
 };
 
-export { getPetsList, getPet };
+export { getPetsList, getPetInfo };
