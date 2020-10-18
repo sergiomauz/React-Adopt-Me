@@ -8,7 +8,7 @@ const PetFinder = () => {
   const onFail = err => err;
   const makeRequest = (path, params = {}) => axios.get(`${PETS_API_BASE}${path}`, { params }).then(onSuccess, onFail);
 
-  const types = async () => makeRequest('types');
+  const types = () => makeRequest('types');
   const showPet = async id => makeRequest(`animals/${id}`);
   const petsList = async filterParams => makeRequest('animals', filterParams);
 
