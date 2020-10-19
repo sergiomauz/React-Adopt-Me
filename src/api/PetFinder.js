@@ -12,8 +12,8 @@ const PetFinder = () => {
   const getPetInfo = async id => makeRequest(`animals/${id}`);
 
   const getPetsList = async filterParams => makeRequest('animals', filterParams);
-  const getPreviousPetsList = href => makeRequest(href);
-  const getNextPetsList = href => makeRequest(href);
+  const getPreviousPetsList = href => makeRequest(href.replace('/v2/', ''));
+  const getNextPetsList = href => makeRequest(href.replace('/v2/', ''));
 
   return {
     types, getPetsList, getPreviousPetsList, getNextPetsList, getPetInfo,

@@ -13,7 +13,7 @@ const getPetsList = filterParams => async dispatch => {
 
 const getPreviousPetsList = () => async (dispatch, getState) => {
   const { _links } = getState().pets.pagination;
-  const href = _links.previous.href.replace('/v2/', '');
+  const { href } = _links.previous;
   const requestedData = await PetFinder().getPreviousPetsList(href);
 
   dispatch({
@@ -24,7 +24,7 @@ const getPreviousPetsList = () => async (dispatch, getState) => {
 
 const getNextPetsList = () => async (dispatch, getState) => {
   const { _links } = getState().pets.pagination;
-  const href = _links.next.href.replace('/v2/', '');
+  const { href } = _links.next;
   const requestedData = await PetFinder().getNextPetsList(href);
 
   dispatch({
