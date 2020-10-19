@@ -1,8 +1,8 @@
 import { CHANGE_PET_FILTER } from './types';
 
-const changePetFilter = filter => ({
+const changePetFilterParams = params => ({
   type: CHANGE_PET_FILTER,
-  filter,
+  filter: params,
 });
 
-export default changePetFilter;
+export default changePetFilterParams;

@@ -1,14 +1,18 @@
 import { CHANGE_PET_FILTER } from '../actions/types';
 
 const initialState = {
-  filter: {},
+  page: 1,
+  type: '',
+  size: '',
+  status: 'adoptable',
+  location: '',
 };
 
 const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_PET_FILTER:
       return {
-        filter: action.filter,
+        ...action.filter,
       };
     default:
       return state;

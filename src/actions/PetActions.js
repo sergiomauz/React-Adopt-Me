@@ -3,8 +3,10 @@ import {
   GET_PETS_LIST, GET_PET_INFO, PREVIOUS_PETS_LIST, NEXT_PETS_LIST,
 } from './types';
 
-const getPetsList = filterParams => async dispatch => {
-  const requestedData = await PetFinder().getPetsList(filterParams);
+const getPetsList = () => async (dispatch, getState) => {
+  const { filter } = getState();
+  const requestedData = await PetFinder().getPetsList(filter);
+
   dispatch({
     type: GET_PETS_LIST,
     payload: requestedData,
@@ -33,8 +35,9 @@ const getNextPetsList = () => async (dispatch, getState) => {
   });
 };
 
-const getPetInfo = id => dispatch => {
-  const requestedData = PetFinder().getPetInfo(id);
+const getPetInfo = id => async dispatch => {
+  const requestedData = await PetFinder().getPetInfo(id);
+
   dispatch({
     type: GET_PET_INFO,
     payload: requestedData,

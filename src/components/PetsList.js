@@ -46,8 +46,13 @@ PetsList.propTypes = {
   getPetsList: PropTypes.func.isRequired,
   pets: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
+    type: PropTypes.string,
+    name: PropTypes.string,
     age: PropTypes.string,
     gender: PropTypes.string,
+    photos: PropTypes.arrayOf(PropTypes.shape({
+      small: PropTypes.string,
+    })),
   })),
   pagination: PropTypes.shape({
     count_per_page: PropTypes.number,

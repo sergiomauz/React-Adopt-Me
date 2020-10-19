@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import generateStore from './store';
-import FilterParams from './components/FilterParams';
+import FilterParams from './components/PetFilterParams';
 import PetsList from './components/PetsList';
 
 const App = () => {

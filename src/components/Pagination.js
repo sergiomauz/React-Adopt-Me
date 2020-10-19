@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -10,19 +11,23 @@ const mapDispatchToProps = {
 
 const Pagination = props => {
   const { info, getNextPetsList, getPreviousPetsList } = props;
-  const { _links } = info;
+  const { _links, current_page, total_pages } = info;
 
   return (
     <>
-      {`Page ${info.current_page} of ${info.total_pages}`}
+      {`Page ${current_page} of ${total_pages}`}
       <br />
       {
-        _links.previous
-        && <button type="button" onClick={() => getPreviousPetsList()}>Previous</button>
+        _links
+          ? _links.previous
+          && <button type="button" onClick={() => getPreviousPetsList()}>Previous</button>
+          : ''
       }
       {
-        _links.next
-        && <button type="button" onClick={() => getNextPetsList()}>Next</button>
+        _links
+          ? _links.next
+          && <button type="button" onClick={() => getNextPetsList()}>Next</button>
+          : ''
       }
     </>
   );
