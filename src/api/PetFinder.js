@@ -10,10 +10,13 @@ const PetFinder = () => {
 
   const types = () => makeRequest('types');
   const getPetInfo = async id => makeRequest(`animals/${id}`);
+
   const getPetsList = async filterParams => makeRequest('animals', filterParams);
+  const getPreviousPetsList = href => makeRequest(href);
+  const getNextPetsList = href => makeRequest(href);
 
   return {
-    types, getPetsList, getPetInfo,
+    types, getPetsList, getPreviousPetsList, getNextPetsList, getPetInfo,
   };
 };
 

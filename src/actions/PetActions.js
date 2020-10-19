@@ -1,10 +1,34 @@
 import PetFinder from '../api/PetFinder';
-import { GET_PETS_LIST, GET_PET_INFO } from './types';
+import {
+  GET_PETS_LIST, GET_PET_INFO, PREVIOUS_PETS_LIST, NEXT_PETS_LIST,
+} from './types';
 
 const getPetsList = filterParams => async dispatch => {
   const requestedData = await PetFinder().getPetsList(filterParams);
   dispatch({
     type: GET_PETS_LIST,
+    payload: requestedData,
+  });
+};
+
+const getPreviousPetsList = () => async (dispatch, getState) => {
+  const { _links } = getState().pets.pagination;
+  const href = _links.previous.href.replace('/v2/', '');
+  const requestedData = await PetFinder().getPreviousPetsList(href);
+
+  dispatch({
+    type: PREVIOUS_PETS_LIST,
+    payload: requestedData,
+  });
+};
+
+const getNextPetsList = () => async (dispatch, getState) => {
+  const { _links } = getState().pets.pagination;
+  const href = _links.next.href.replace('/v2/', '');
+  const requestedData = await PetFinder().getNextPetsList(href);
+
+  dispatch({
+    type: NEXT_PETS_LIST,
     payload: requestedData,
   });
 };
@@ -17,4 +41,6 @@ const getPetInfo = id => dispatch => {
   });
 };
 
-export { getPetsList, getPetInfo };
+export {
+  getPetsList, getPreviousPetsList, getNextPetsList, getPetInfo,
+};
