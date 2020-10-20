@@ -37,7 +37,6 @@ const getNextPetsList = () => async (dispatch, getState) => {
 
 const getPetInfo = id => async dispatch => {
   const requestedData = await PetFinder().getPetInfo(id);
-
   dispatch({
     type: GET_PET_INFO,
     payload: requestedData,

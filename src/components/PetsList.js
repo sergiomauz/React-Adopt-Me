@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getPetsList } from '../actions/PetActions';
 import Pet from './Pet';
 import Pagination from './Pagination';
+import FilterParams from './PetFilterParams';
+import { getPetsList } from '../actions/PetActions';
 
 const mapStateToProps = state => ({
-  pets: state.pets.animals,
+  animals: state.pets.animals,
   pagination: state.pets.pagination,
 });
 
@@ -22,14 +23,15 @@ class PetsList extends Component {
 
   render() {
     const {
-      pets, pagination,
+      animals, pagination,
     } = this.props;
 
     return (
       <>
+        <FilterParams />
         <ul>
           {
-            pets.map(
+            animals.map(
               pet => (
                 <Pet key={pet.id} info={pet} />
               ),
@@ -44,7 +46,7 @@ class PetsList extends Component {
 
 PetsList.propTypes = {
   getPetsList: PropTypes.func.isRequired,
-  pets: PropTypes.arrayOf(PropTypes.shape({
+  animals: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     type: PropTypes.string,
     name: PropTypes.string,
@@ -71,7 +73,7 @@ PetsList.propTypes = {
 };
 
 PetsList.defaultProps = {
-  pets: [],
+  animals: [],
   pagination: {
     count_per_page: 20,
     total_count: 0,
