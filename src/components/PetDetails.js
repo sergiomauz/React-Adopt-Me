@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import PetFinder from '../api/PetFinder';
 import { getPetInfo } from '../actions/PetActions';
 
 const mapStateToProps = state => ({
@@ -11,39 +12,68 @@ const mapDispatchToProps = {
   getPetInfo,
 };
 
-class PetDetails extends Component {
-  componentDidMount() {
-    const { match, getPetInfo } = this.props;
-    const { params } = match;
-    const { id } = params;
+const PetDetails = props => {
+  const { match } = props;
+  const { params } = match;
+  const { id } = params;
+  const [pet, setPet] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    getPetInfo(id);
+  useEffect(() => {
+    async function asyncGetPetInfo() {
+      const body = await PetFinder().getPetInfo(id);
+      setPet(body.animal);
+    }
+    asyncGetPetInfo();
+    setLoading(false);
+  }, []);
 
-    console.log(this.props);
-  }
-
-  render() {
-    const { pet } = this.props;
-
-    return (
-      <>
-        <h3>PET DETAILS</h3>
-        {
-          `${pet.type} | ${pet.name} | ${pet.age} | ${pet.gender} | ${pet.size}`
-        }
-        <br />
-        <p>{pet.description}</p>
-        {/* <img src={pet.photos[0].large} alt="" /> */}
-        {/* {
-          `${pet.breeds.mixed}` ? 'Crossbred' : `${pet.breeds.primary}`
-        } */}
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <h3>PET DETAILS</h3>
+      {
+        (
+          loading
+          && <span>Loading...</span>
+        )
+      }
+      {
+        (pet
+          && (
+            <>
+              {`${pet.published_at.slice(0, 10)}`}
+              <br />
+              {`${pet.type} | ${pet.name} | ${pet.age} | ${pet.gender} | ${pet.size}`}
+              <br />
+              {`${pet.breeds.mixed}` ? 'Crossbred' : `${pet.breeds.primary}`}
+              <p>{pet.description}</p>
+              <img src={pet.photos[0].large} alt="" />
+              <br />
+              <div>
+                Contact:
+                <ul>
+                  <li>
+                    Email:
+                    {pet.contact.email}
+                  </li>
+                  <li>
+                    Phone:
+                    {pet.contact.phone}
+                  </li>
+                  <li>
+                    {`City: ${pet.contact.address.city}, ${pet.contact.address.state}`}
+                  </li>
+                </ul>
+              </div>
+            </>
+          )
+        )
+      }
+    </>
+  );
+};
 
 PetDetails.propTypes = {
-  getPetInfo: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
