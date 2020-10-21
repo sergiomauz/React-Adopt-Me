@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import PetFinder from '../api/PetFinder';
 import { getPetInfo } from '../actions/PetActions';
 
 const mapStateToProps = state => ({
-  pet: state.pets.animal,
+  animal: state.pets.animal,
 });
 
 const mapDispatchToProps = {
@@ -13,55 +12,48 @@ const mapDispatchToProps = {
 };
 
 const PetDetails = props => {
-  const { match } = props;
+  const { match, getPetInfo, animal } = props;
   const { params } = match;
   const { id } = params;
-  const [pet, setPet] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function asyncGetPetInfo() {
-      const body = await PetFinder().getPetInfo(id);
-      setPet(body.animal);
-    }
-    asyncGetPetInfo();
+    getPetInfo(id);
     setLoading(false);
-  }, []);
+  }, [id, getPetInfo]);
 
   return (
     <>
       <h3>PET DETAILS</h3>
       {
-        (
-          loading
-          && <span>Loading...</span>
-        )
+        loading
+        && <span>Loading...</span>
       }
       {
-        (pet
+        (animal
           && (
             <>
-              {`${pet.published_at.slice(0, 10)}`}
+              {`${animal.published_at.slice(0, 10)}`}
               <br />
-              {`${pet.type} | ${pet.name} | ${pet.age} | ${pet.gender} | ${pet.size}`}
+              {`${animal.type} | ${animal.name} | ${animal.age} | ${animal.gender} | ${animal.size}`}
               <br />
-              {`${pet.breeds.mixed}` ? 'Crossbred' : `${pet.breeds.primary}`}
-              <p>{pet.description}</p>
-              <img src={pet.photos[0].large} alt="" />
+              {`${animal.breeds.mixed}` ? 'Crossbred' : `${animal.breeds.primary}`}
+              <p>{animal.description}</p>
+              <img src={animal.photos[0].large} alt="" />
               <br />
               <div>
                 Contact:
                 <ul>
                   <li>
                     Email:
-                    {pet.contact.email}
+                    {animal.contact.email}
                   </li>
                   <li>
                     Phone:
-                    {pet.contact.phone}
+                    {animal.contact.phone}
                   </li>
                   <li>
-                    {`City: ${pet.contact.address.city}, ${pet.contact.address.state}`}
+                    {`City: ${animal.contact.address.city}, ${animal.contact.address.state}`}
                   </li>
                 </ul>
               </div>
@@ -74,12 +66,13 @@ const PetDetails = props => {
 };
 
 PetDetails.propTypes = {
+  getPetInfo: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-  pet: PropTypes.shape({
+  animal: PropTypes.shape({
     id: PropTypes.number,
     type: PropTypes.string,
     name: PropTypes.string,
@@ -87,17 +80,27 @@ PetDetails.propTypes = {
     gender: PropTypes.string,
     size: PropTypes.string,
     description: PropTypes.string,
+    published_at: PropTypes.string,
     photos: PropTypes.arrayOf(PropTypes.shape({
       large: PropTypes.string,
     })),
     breeds: PropTypes.shape({
       mixed: PropTypes.bool,
+      primary: PropTypes.string,
+    }),
+    contact: PropTypes.shape({
+      email: PropTypes.string,
+      phone: PropTypes.string,
+      address: PropTypes.shape({
+        city: PropTypes.string,
+        state: PropTypes.string,
+      }),
     }),
   }),
 };
 
 PetDetails.defaultProps = {
-  pet: {},
+  animal: null,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PetDetails);
