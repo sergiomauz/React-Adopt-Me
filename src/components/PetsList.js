@@ -7,6 +7,7 @@ import FilterParams from './PetFilterParams';
 import { getPetsList } from '../actions/PetActions';
 
 const mapStateToProps = state => ({
+  filter: state.pets.filter,
   animals: state.pets.animals,
   pagination: state.pets.pagination,
 });

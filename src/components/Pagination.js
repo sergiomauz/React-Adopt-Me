@@ -19,15 +19,16 @@ const Pagination = props => {
       <br />
       {
         _links
-          ? _links.previous
+        && (
+          _links.previous
           && <button type="button" onClick={() => getPreviousPetsList()}>Previous</button>
-          : ''
+        )
       }
       {
         _links
-          ? _links.next
+        && (_links.next
           && <button type="button" onClick={() => getNextPetsList()}>Next</button>
-          : ''
+        )
       }
     </>
   );

@@ -2,11 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PetFinder from '../api/PetFinder';
-import changePetFilterParams from '../actions/FilterActions';
-import { getPetsList } from '../actions/PetActions';
+import { getPetsList, changePetFilterParams } from '../actions/PetActions';
 
 const mapStateToProps = state => ({
-  filter: state.filter,
+  filter: state.pets.filter,
 });
 
 const mapDispatchToProps = {
@@ -29,12 +28,14 @@ const FilterPetsParams = props => {
 
   const getParams = () => {
     changePetFilterParams({
-      type: dropType.current.value,
-      size: dropSize.current.value,
-      age: dropAge.current.value,
-      location: dropCity.current.value,
-      status: 'adoptable',
-      page: 1,
+      filter: {
+        type: dropType.current.value,
+        size: dropSize.current.value,
+        age: dropAge.current.value,
+        location: dropCity.current.value,
+        status: 'adoptable',
+        page: 1,
+      },
     });
     getPetsList();
   };
