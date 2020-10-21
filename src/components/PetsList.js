@@ -30,6 +30,11 @@ class PetsList extends Component {
     return (
       <>
         <FilterParams />
+        <br />
+        <br />
+        {
+          pagination && <Pagination info={pagination} />
+        }
         <ul>
           {
             animals.map(
@@ -39,7 +44,10 @@ class PetsList extends Component {
             )
           }
         </ul>
-        <Pagination info={pagination} />
+        <br />
+        {
+          pagination && <Pagination info={pagination} />
+        }
       </>
     );
   }
@@ -70,25 +78,11 @@ PetsList.propTypes = {
         href: PropTypes.string,
       }),
     }),
-  }),
+  }).isRequired,
 };
 
 PetsList.defaultProps = {
   animals: [],
-  pagination: {
-    count_per_page: 20,
-    total_count: 0,
-    current_page: 1,
-    total_pages: 0,
-    _links: {
-      previous: {
-        href: '#',
-      },
-      next: {
-        href: '#',
-      },
-    },
-  },
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PetsList);

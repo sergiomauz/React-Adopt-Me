@@ -13,7 +13,7 @@ const mapDispatchToProps = {
   getPetsList,
 };
 
-const FilterPetsParams = props => {
+const PetFilterPetsParams = props => {
   const dropType = useRef(null);
   const dropSize = useRef(null);
   const dropAge = useRef(null);
@@ -97,9 +97,9 @@ const FilterPetsParams = props => {
   );
 };
 
-FilterPetsParams.propTypes = {
+PetFilterPetsParams.propTypes = {
   changePetFilterParams: PropTypes.func.isRequired,
   getPetsList: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterPetsParams);
+export default connect(mapStateToProps, mapDispatchToProps)(PetFilterPetsParams);

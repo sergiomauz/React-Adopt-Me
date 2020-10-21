@@ -30,35 +30,34 @@ const PetDetails = props => {
         && <span>Loading...</span>
       }
       {
-        (animal
-          && (
-            <>
-              {`${animal.published_at.slice(0, 10)}`}
-              <br />
-              {`${animal.type} | ${animal.name} | ${animal.age} | ${animal.gender} | ${animal.size}`}
-              <br />
-              {`${animal.breeds.mixed}` ? 'Crossbred' : `${animal.breeds.primary}`}
-              <p>{animal.description}</p>
-              <img src={animal.photos[0].large} alt="" />
-              <br />
-              <div>
-                Contact:
-                <ul>
-                  <li>
-                    Email:
-                    {animal.contact.email}
-                  </li>
-                  <li>
-                    Phone:
-                    {animal.contact.phone}
-                  </li>
-                  <li>
-                    {`City: ${animal.contact.address.city}, ${animal.contact.address.state}`}
-                  </li>
-                </ul>
-              </div>
-            </>
-          )
+        animal
+        && (
+          <>
+            {`${animal.published_at.slice(0, 10)}`}
+            <br />
+            {`${animal.type} | ${animal.name} | ${animal.age} | ${animal.gender} | ${animal.size}`}
+            <br />
+            {`${animal.breeds.mixed}` ? 'Crossbred' : `${animal.breeds.primary}`}
+            <p>{animal.description}</p>
+            <img src={animal.photos[0].large} alt="" />
+            <br />
+            <div>
+              Contact:
+              <ul>
+                <li>
+                  Email:
+                  {animal.contact.email}
+                </li>
+                <li>
+                  Phone:
+                  {animal.contact.phone}
+                </li>
+                <li>
+                  {`City: ${animal.contact.address.city}, ${animal.contact.address.state}`}
+                </li>
+              </ul>
+            </div>
+          </>
         )
       }
     </>

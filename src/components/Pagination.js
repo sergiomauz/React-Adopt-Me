@@ -20,14 +20,16 @@ const Pagination = props => {
       {
         _links
         && (
-          _links.previous
-          && <button type="button" onClick={() => getPreviousPetsList()}>Previous</button>
-        )
-      }
-      {
-        _links
-        && (_links.next
-          && <button type="button" onClick={() => getNextPetsList()}>Next</button>
+          <>
+            {
+              _links.previous
+              && <button type="button" onClick={() => getPreviousPetsList()}>Previous</button>
+            }
+            {
+              _links.next
+              && <button type="button" onClick={() => getNextPetsList()}>Next</button>
+            }
+          </>
         )
       }
     </>
