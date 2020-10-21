@@ -4,9 +4,18 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import generateStore from './store';
 import PetsList from './components/PetsList';
 import PetDetails from './components/PetDetails';
+// import PetFinder from './api/PetFinder';
 
 const App = () => {
   const store = generateStore();
+
+  // const [token, setToken] = useState({});
+
+  // useEffect(() => {
+  //   setToken(PetFinder().requestToken());
+  // });
+
+  // PetFinder().requestToken();
 
   return (
     <Provider store={store}>
