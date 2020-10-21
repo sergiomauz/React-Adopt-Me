@@ -1,12 +1,13 @@
 import axios from 'axios';
+import { PET_FINDER_PUBLIC_KEY, PET_FINDER_SECRET_KEY } from '../helper/keys';
 
 const PetFinder = () => {
   const PETS_API_BASE_V2 = 'https://api.petfinder.com/v2/';
-  // const PETS_API_BASE = 'http://pets.dev-apis.com/';
 
   const onSuccess = ({ data }) => data;
   const onFail = err => err;
-  const requestToken = async (publicKey = 'Js39larUwHx0BiFN1xv1wnO4vY15bwRIyqeEXvpg7ZcJhyIBNr', secretKey = '7MwOy33C8PcIbSeUTJMujb9lizo7OC8JYVUQ49WZ') => {
+  const requestToken = async (
+    publicKey = PET_FINDER_PUBLIC_KEY, secretKey = PET_FINDER_SECRET_KEY) => {
     const request = await axios.post(`${PETS_API_BASE_V2}oauth2/token`, {
       grant_type: 'client_credentials',
       client_id: `${publicKey}`,

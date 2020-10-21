@@ -13,10 +13,7 @@ const getPetsList = () => async (dispatch, getState) => {
   if (!filter) {
     filter = {
       page: 1,
-      type: '',
-      size: '',
       status: 'adoptable',
-      location: '',
     };
   }
 

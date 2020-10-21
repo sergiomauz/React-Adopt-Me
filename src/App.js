@@ -9,14 +9,6 @@ import PetDetails from './components/PetDetails';
 const App = () => {
   const store = generateStore();
 
-  // const [token, setToken] = useState({});
-
-  // useEffect(() => {
-  //   setToken(PetFinder().requestToken());
-  // });
-
-  // PetFinder().requestToken();
-
   return (
     <Provider store={store}>
       <BrowserRouter>
