@@ -9,10 +9,6 @@ const petReducer = (state = initialState, action) => {
     case GET_PETS_LIST:
     case PREVIOUS_PETS_LIST:
     case NEXT_PETS_LIST:
-      return {
-        ...state,
-        ...action.payload,
-      };
     case GET_PET_INFO:
       return {
         ...state,
