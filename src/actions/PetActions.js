@@ -1,12 +1,23 @@
 import PetFinder from '../api/PetFinder';
 import {
-  GET_PETS_LIST, GET_PET_INFO, PREVIOUS_PETS_LIST, NEXT_PETS_LIST,
+  GET_PETS_LIST, GET_PET_INFO, PREVIOUS_PETS_LIST, NEXT_PETS_LIST, CHANGE_PET_FILTER,
 } from './types';
 
-const getPetsList = () => async (dispatch, getState) => {
-  const { filter } = getState();
-  const requestedData = await PetFinder().getPetsList(filter);
+const changePetFilterParams = params => ({
+  type: CHANGE_PET_FILTER,
+  payload: params,
+});
 
+const getPetsList = () => async (dispatch, getState) => {
+  let { filter } = getState().pets;
+  if (!filter) {
+    filter = {
+      page: 1,
+      status: 'adoptable',
+    };
+  }
+
+  const requestedData = await PetFinder().getPetsList(filter);
   dispatch({
     type: GET_PETS_LIST,
     payload: requestedData,
@@ -37,7 +48,6 @@ const getNextPetsList = () => async (dispatch, getState) => {
 
 const getPetInfo = id => async dispatch => {
   const requestedData = await PetFinder().getPetInfo(id);
-
   dispatch({
     type: GET_PET_INFO,
     payload: requestedData,
@@ -45,5 +55,5 @@ const getPetInfo = id => async dispatch => {
 };
 
 export {
-  getPetsList, getPreviousPetsList, getNextPetsList, getPetInfo,
+  getPetsList, getPreviousPetsList, getNextPetsList, getPetInfo, changePetFilterParams,
 };

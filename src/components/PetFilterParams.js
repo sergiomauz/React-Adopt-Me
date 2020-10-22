@@ -2,11 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PetFinder from '../api/PetFinder';
-import changePetFilterParams from '../actions/FilterActions';
-import { getPetsList } from '../actions/PetActions';
+import { getPetsList, changePetFilterParams } from '../actions/PetActions';
 
 const mapStateToProps = state => ({
-  filter: state.filter,
+  filter: state.pets.filter,
 });
 
 const mapDispatchToProps = {
@@ -14,7 +13,7 @@ const mapDispatchToProps = {
   getPetsList,
 };
 
-const FilterPetsParams = props => {
+const PetFilterPetsParams = props => {
   const dropType = useRef(null);
   const dropSize = useRef(null);
   const dropAge = useRef(null);
@@ -28,14 +27,23 @@ const FilterPetsParams = props => {
   const [cities, setCities] = useState([]);
 
   const getParams = () => {
-    changePetFilterParams({
-      type: dropType.current.value,
-      size: dropSize.current.value,
-      age: dropAge.current.value,
-      location: dropCity.current.value,
-      status: 'adoptable',
-      page: 1,
-    });
+    const newFilter = {
+      filter: {},
+    };
+    if (dropType.current.value.length > 0) {
+      newFilter.filter.type = dropType.current.value;
+    }
+    if (dropSize.current.value.length > 0) {
+      newFilter.filter.size = dropSize.current.value;
+    }
+    if (dropAge.current.value.length > 0) {
+      newFilter.filter.age = dropAge.current.value;
+    }
+    if (dropCity.current.value.length > 0) {
+      newFilter.filter.location = dropCity.current.value;
+    }
+
+    changePetFilterParams(newFilter);
     getPetsList();
   };
 
@@ -96,9 +104,9 @@ const FilterPetsParams = props => {
   );
 };
 
-FilterPetsParams.propTypes = {
+PetFilterPetsParams.propTypes = {
   changePetFilterParams: PropTypes.func.isRequired,
   getPetsList: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterPetsParams);
+export default connect(mapStateToProps, mapDispatchToProps)(PetFilterPetsParams);
