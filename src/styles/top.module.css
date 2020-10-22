@@ -1,0 +1,37 @@
+@import "../index.module.css";
+
+.systemNavbar {
+  padding: 0;
+  margin: 0;
+  grid-row: 1;
+  background-color: var(--green);
+}
+
+.servicesNavbar {
+  padding: 0;
+  margin: 0;
+  grid-row: 1;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.navOptions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  justify-content: space-around;
+}
+
+.containerOptions {
+  width: 800px;
+  background-color: var(--red);
+  text-align: center;
+}
+
+.headLine {
+  height: 300px;
+  background-color: var(--orange);
+}

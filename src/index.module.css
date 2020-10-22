@@ -1,0 +1,26 @@
+:root {
+  --green: #339a99;
+  --red: #9a0000;
+  --blue: #0290ff;
+  --orange: #fa8d54;
+  --black: #333;
+  --pink: #cd6667;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 900px;
+  background-color: var(--green);
+}
