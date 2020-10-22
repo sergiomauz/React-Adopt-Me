@@ -5,6 +5,7 @@ import Pet from './Pet';
 import Pagination from './Pagination';
 import FilterParams from './PetFilterParams';
 import { getPetsList } from '../actions/PetActions';
+import Style from '../styles/petlist.module.css';
 
 const mapStateToProps = state => ({
   filter: state.pets.filter,
@@ -35,7 +36,7 @@ class PetsList extends Component {
         {
           pagination && <Pagination info={pagination} />
         }
-        <ul>
+        <ul className={Style.petList}>
           {
             animals.map(
               pet => (

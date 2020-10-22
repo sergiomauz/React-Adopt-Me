@@ -1,0 +1,13 @@
+@import "../index.module.css";
+
+.petCard {
+  background-color: gray;
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+}
+
+.petPhoto {
+  width: 150px;
+  height: 150px;
+}
