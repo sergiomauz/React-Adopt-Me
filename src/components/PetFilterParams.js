@@ -27,16 +27,23 @@ const PetFilterPetsParams = props => {
   const [cities, setCities] = useState([]);
 
   const getParams = () => {
-    changePetFilterParams({
-      filter: {
-        type: dropType.current.value,
-        size: dropSize.current.value,
-        age: dropAge.current.value,
-        location: dropCity.current.value,
-        status: 'adoptable',
-        page: 1,
-      },
-    });
+    const newFilter = {
+      filter: {},
+    };
+    if (dropType.current.value.length > 0) {
+      newFilter.filter.type = dropType.current.value;
+    }
+    if (dropSize.current.value.length > 0) {
+      newFilter.filter.size = dropSize.current.value;
+    }
+    if (dropAge.current.value.length > 0) {
+      newFilter.filter.age = dropAge.current.value;
+    }
+    if (dropCity.current.value.length > 0) {
+      newFilter.filter.location = dropCity.current.value;
+    }
+
+    changePetFilterParams(newFilter);
     getPetsList();
   };
 

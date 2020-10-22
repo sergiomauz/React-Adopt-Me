@@ -78,11 +78,12 @@ PetsList.propTypes = {
         href: PropTypes.string,
       }),
     }),
-  }).isRequired,
+  }),
 };
 
 PetsList.defaultProps = {
   animals: [],
+  pagination: null,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PetsList);
