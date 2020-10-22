@@ -72,6 +72,7 @@ const PetFinder = () => {
     getPreviousPetsList,
     getNextPetsList,
     getPetInfo,
+
     getTypes,
     getSizes,
     getAges,
