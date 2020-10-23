@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Style from '../styles/top.module.css';
 
 const Top = () => (
@@ -9,17 +10,28 @@ const Top = () => (
     <nav className={Style.servicesNavbar}>
       <div className={Style.containerOptions}>
         <ul className={Style.navOptions}>
-          <li>About Pet Adoption</li>
-          <li>Dog Care</li>
-          <li>Cat Care</li>
-          <li>All Pet Care</li>
-          <li>Shelters and Rescues</li>
-          <li>Helping Pets</li>
-          <li>Videos</li>
+          <li>
+            <Link to="/" className={Style.navLink}>About Pet Adoption</Link>
+          </li>
+          <li>
+            <Link to="/" className={Style.navLink}>Dog Care</Link>
+          </li>
+          <li>
+            <Link to="/" className={Style.navLink}>Cat Care</Link>
+          </li>
+          <li>
+            <Link to="/" className={Style.navLink}>All Pet Care</Link>
+          </li>
+          <li>
+            <Link to="/" className={Style.navLink}>Shelters and Rescues</Link>
+          </li>
+          <li>
+            <Link to="/" className={Style.navLink}>Helping Pets</Link>
+          </li>
+          <li>
+            <Link to="/" className={Style.navLink}>Videos</Link>
+          </li>
         </ul>
-        <div className={Style.headLine}>
-          xcd
-        </div>
       </div>
     </nav>
   </>

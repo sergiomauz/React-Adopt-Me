@@ -1,13 +1,81 @@
 @import "../index.module.css";
 
 .petCard {
-  background-color: gray;
-  margin: 5px;
-  width: 200px;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 5px 5px 0 0;
+  height: 300px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.petCard:first-child {
+  margin: 5px 5px 0 0;
 }
 
 .petPhoto {
-  width: 150px;
-  height: 150px;
+  border-radius: 5px;
+  width: 100%;
+  height: 250px;
+}
+
+.petName {
+  top: -20%;
+  position: relative;
+  padding-top: 50px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background: white;
+}
+
+@media (min-width: 1200px) {
+  .petCard {
+    width: 200px;
+  }
+
+  .petCard:nth-child(4n) {
+    margin: 5px 0 0 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .petCard {
+    width: 200px;
+  }
+
+  .petCard:nth-child(4n) {
+    margin: 5px 0 0 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .petCard {
+    width: 208px;
+  }
+
+  .petCard:nth-child(3n) {
+    margin: 5px 0 0 0;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 767px) {
+  .petCard {
+    width: 208px;
+  }
+
+  .petCard:nth-child(3n) {
+    margin: 5px 0 0 0;
+  }
+}
+
+@media (max-width: 649px) {
+  .petCard {
+    width: 210px;
+    margin: 5px;
+  }
+
+  .petCard:nth-child(2n) {
+    margin: 5px 0 0 0;
+  }
 }

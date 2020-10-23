@@ -3,8 +3,8 @@ import Style from '../styles/bottom.module.css';
 
 const Bottom = () => (
   <>
-    <footer className={Style.systemNavbar}>
-      <nav className={Style.servicesNavbar}>
+    <footer className={Style.footer}>
+      <nav className={Style.footerNavbar}>
         <div className={Style.containerOptions}>
           <ul className={Style.navOptions}>
             <li>About Pet Adoption</li>
@@ -17,7 +17,7 @@ const Bottom = () => (
           </ul>
         </div>
       </nav>
-      <div>Holi</div>
+      <div className={Style.tradeMark}>Holi</div>
     </footer>
 
   </>

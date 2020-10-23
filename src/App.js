@@ -19,13 +19,15 @@ const App = () => {
       <BrowserRouter>
         <>
           <Top />
-          <div className={Style.container}>
-            <Switch>
-              <Route exact path="/" component={PetsList} />
-              <Route exact path="/pets" component={PetsList} />
-              <Route exact path="/pet/:id" component={PetDetails} />
-            </Switch>
-          </div>
+          <main className={Style.mainContainer}>
+            <div className={Style.pageContent}>
+              <Switch>
+                <Route exact path="/" component={PetsList} />
+                <Route exact path="/pets" component={PetsList} />
+                <Route exact path="/pet/:id" component={PetDetails} />
+              </Switch>
+            </div>
+          </main>
           <Bottom />
         </>
       </BrowserRouter>
