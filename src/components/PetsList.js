@@ -31,8 +31,6 @@ class PetsList extends Component {
     return (
       <>
         <FilterParams />
-        <br />
-        <br />
         {
           pagination && <Pagination info={pagination} />
         }
@@ -45,7 +43,6 @@ class PetsList extends Component {
             )
           }
         </ul>
-        <br />
         {
           pagination && <Pagination info={pagination} />
         }

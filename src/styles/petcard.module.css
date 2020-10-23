@@ -7,7 +7,7 @@
   margin: 5px 5px 0 0;
   height: 300px;
   border-radius: 5px;
-  border: 1px solid #aaa;
+  border: 1px solid var(--gray);
 }
 
 .petCard:first-child {
@@ -22,11 +22,20 @@
 
 .petName {
   top: -20%;
+  display: flex;
+  justify-content: center;
   position: relative;
   padding-top: 50px;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
-  background: white;
+  background: var(--white);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+.cardLink:link {
+  text-decoration: none;
 }
 
 @media (min-width: 1200px) {
@@ -69,13 +78,23 @@
   }
 }
 
-@media (max-width: 649px) {
+@media (min-width: 536px) and (max-width: 649px) {
   .petCard {
     width: 210px;
-    margin: 5px;
   }
 
   .petCard:nth-child(2n) {
+    margin: 5px 0 0 0;
+  }
+}
+
+@media (max-width: 535px) {
+  .petCard {
+    width: 210px;
+    margin: 5px 0 0 0;
+  }
+
+  .petCard:first-child {
     margin: 5px 0 0 0;
   }
 }

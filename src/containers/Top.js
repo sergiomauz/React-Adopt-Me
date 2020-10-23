@@ -5,31 +5,31 @@ import Style from '../styles/top.module.css';
 const Top = () => (
   <>
     <header className={Style.systemNavbar}>
-      Holi
+      <div className={Style.containerOptions}>
+        <ul className={Style.signOptions}>
+          <li className={Style.navItem}>
+            <Link to="/" className={Style.navLink}>Sign up</Link>
+          </li>
+          <li className={Style.navItem}>
+            <Link to="/" className={Style.navLink}>Sign in</Link>
+          </li>
+        </ul>
+      </div>
     </header>
     <nav className={Style.servicesNavbar}>
       <div className={Style.containerOptions}>
         <ul className={Style.navOptions}>
-          <li>
-            <Link to="/" className={Style.navLink}>About Pet Adoption</Link>
+          <li className={Style.navItem}>
+            <Link to="/" className={Style.navLink}>About Us</Link>
           </li>
-          <li>
-            <Link to="/" className={Style.navLink}>Dog Care</Link>
-          </li>
-          <li>
-            <Link to="/" className={Style.navLink}>Cat Care</Link>
-          </li>
-          <li>
+          <li className={Style.navItem}>
             <Link to="/" className={Style.navLink}>All Pet Care</Link>
           </li>
-          <li>
-            <Link to="/" className={Style.navLink}>Shelters and Rescues</Link>
-          </li>
-          <li>
+          <li className={Style.navItem}>
             <Link to="/" className={Style.navLink}>Helping Pets</Link>
           </li>
-          <li>
-            <Link to="/" className={Style.navLink}>Videos</Link>
+          <li className={Style.navItem}>
+            <Link to="/" className={Style.navLink}>Donate</Link>
           </li>
         </ul>
       </div>

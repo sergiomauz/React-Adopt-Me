@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PetFinder from '../api/PetFinder';
 import { getPetsList, changePetFilterParams } from '../actions/PetActions';
+import Style from '../styles/petfilter.module.css';
 
 const mapStateToProps = state => ({
   filter: state.pets.filter,
@@ -56,50 +58,52 @@ const PetFilterPetsParams = props => {
 
   return (
     <>
-      <label htmlFor={dropCity}>
-        City:
-        <select ref={dropCity} onChange={() => getParams()}>
-          <option value="">All</option>
-          {
-            cities.map(city => (
-              <option key={city} value={city}>{city}</option>
-            ))
-          }
-        </select>
-      </label>
-      <label htmlFor={dropType}>
-        Animal:
-        <select ref={dropType} onChange={() => getParams()}>
-          <option value="">All</option>
-          {
-            types.map(type => (
-              <option key={type} value={type}>{type}</option>
-            ))
-          }
-        </select>
-      </label>
-      <label htmlFor={dropSize}>
-        Size:
-        <select ref={dropSize} onChange={() => getParams()}>
-          <option value="">All</option>
-          {
-            sizes.map(size => (
-              <option key={size} value={size}>{size}</option>
-            ))
-          }
-        </select>
-      </label>
-      <label htmlFor={dropAge}>
-        Age:
-        <select ref={dropAge} onChange={() => getParams()}>
-          <option value="">All</option>
-          {
-            ages.map(age => (
-              <option key={age} value={age}>{age}</option>
-            ))
-          }
-        </select>
-      </label>
+      <div className={Style.filterContainer}>
+        <label>
+          <div className={Style.labelText}>City:</div>
+          <select ref={dropCity} onChange={() => getParams()} className={Style.dropFilter}>
+            <option value="">All</option>
+            {
+              cities.map(city => (
+                <option key={city} value={city}>{city}</option>
+              ))
+            }
+          </select>
+        </label>
+        <label>
+          <div className={Style.labelText}>Animal:</div>
+          <select ref={dropType} onChange={() => getParams()} className={Style.dropFilter}>
+            <option value="">All</option>
+            {
+              types.map(type => (
+                <option key={type} value={type}>{type}</option>
+              ))
+            }
+          </select>
+        </label>
+        <label>
+          <div className={Style.labelText}>Size:</div>
+          <select ref={dropSize} onChange={() => getParams()} className={Style.dropFilter}>
+            <option value="">All</option>
+            {
+              sizes.map(size => (
+                <option key={size} value={size}>{size}</option>
+              ))
+            }
+          </select>
+        </label>
+        <label>
+          <div className={Style.labelText}>Age:</div>
+          <select ref={dropAge} onChange={() => getParams()} className={Style.dropFilter}>
+            <option value="">All</option>
+            {
+              ages.map(age => (
+                <option key={age} value={age}>{age}</option>
+              ))
+            }
+          </select>
+        </label>
+      </div>
     </>
   );
 };

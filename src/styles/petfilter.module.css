@@ -1,0 +1,28 @@
+@import "../index.module.css";
+
+.filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dropFilter {
+  height: 32px;
+  border-radius: 5px;
+  min-width: 175px;
+  margin-bottom: 10px;
+}
+
+.labelText {
+  width: 120px;
+}
+
+@media (max-width: 545px) {
+  .filterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 10px;
+  }
+}

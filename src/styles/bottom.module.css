@@ -34,8 +34,9 @@
 }
 
 .containerOptions {
-  width: 800px;
-  background-color: var(--red);
+  max-width: 800px;
+  color: var(--white);
+  margin: 60px;
 }
 
 .headLine {

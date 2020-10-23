@@ -6,6 +6,7 @@
   --black: #333;
   --pink: #cd6667;
   --white: #fff;
+  --gray: #aaa;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
   padding: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  gap: 0;
+  min-width: 350px;
 }
 
 ul {
@@ -21,25 +22,21 @@ ul {
   padding: 0;
 }
 
-.topCurve{
-  background-color: red;
-  position: relative;
-  top: 0;
-}
-
 .mainContainer {
-  width: 100%;  
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  min-height: 75vh;
 }
 
 .pageContent {
-  border: 1px solid green;
+  border: 1px solid var(--gray);
   border-radius: 5px;
   background-color: var(--white);
   position: relative;
   padding: 15px;
+  margin: -50px auto;
 }
 
 @media (min-width: 1200px) {

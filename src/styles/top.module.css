@@ -1,6 +1,8 @@
 @import "../index.module.css";
 
 .systemNavbar {
+  display: flex;
+  justify-content: center;
   padding: 0;
   margin: 0;
   grid-row: 1;
@@ -9,12 +11,10 @@
 
 .servicesNavbar {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   padding: 0;
   margin: 0;
-  grid-row: 1;
-  height: 100px;
+  height: 110px;
   background-color: var(--black);
   border-bottom-left-radius: 10%;
   border-bottom-right-radius: 10%;
@@ -23,20 +23,73 @@
 .navOptions {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.signOptions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   list-style-type: none;
   justify-content: space-around;
 }
 
 .containerOptions {
-  width: 800px;
+  max-width: 800px;
+}
+
+.navItem {
+  margin: 10px 5px;
 }
 
 .navLink {
   color: var(--white);
   text-decoration: none;
+  margin: 3px;
+  text-transform: uppercase;
 }
 
-.navLink:link {
-  text-decoration: none;
+@media (min-width: 1200px) {
+  .containerOptions {
+    width: 823px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .containerOptions {
+    width: 823px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .containerOptions {
+    width: 640px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 767px) {
+  .containerOptions {
+    width: 640px;
+  }
+}
+
+@media (min-width: 536px) and (max-width: 649px) {
+  .containerOptions {
+    width: 80%;
+  }
+}
+
+@media (max-width: 535px) {
+  .containerOptions {
+    width: 80%;
+  }
+
+  .servicesNavbar {
+    height: 175px;
+  }
 }
