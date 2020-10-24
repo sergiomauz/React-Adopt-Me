@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ANIMAL_TYPES, ANIMAL_SIZES, ANIMAL_AGES, LOCATIONS } from '../helper/constants';
 import { PET_FINDER_PUBLIC_KEY, PET_FINDER_SECRET_KEY } from '../helper/keys';
 
 const PetFinder = () => {
@@ -62,10 +63,10 @@ const PetFinder = () => {
   const getNextPetsList = href => makeRequest(href.replace('/v2/', ''));
   const getPetInfo = id => makeRequest(`animals/${id}`);
 
-  const getTypes = () => ['Dog', 'Cat', 'Rabbit', 'Small and Furry', 'Horse', 'Bird', 'Scales Fins and Other', 'Barnyard'];
-  const getSizes = () => ['Small', 'Medium', 'Large', 'Xlarge'];
-  const getAges = () => ['Baby', 'Young', 'Adult', 'Senior'];
-  const getCities = () => ['Seattle, WA', 'San Francisco, CA'];
+  const getTypes = () => ANIMAL_TYPES;
+  const getSizes = () => ANIMAL_SIZES;
+  const getAges = () => ANIMAL_AGES;
+  const getCities = () => LOCATIONS;
 
   return {
     getPetsList,
