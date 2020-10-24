@@ -1,4 +1,4 @@
-@import "../index.module.css";
+@import "./index.module.css";
 
 .tradeMark {
   background-color: var(--green);

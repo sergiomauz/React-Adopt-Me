@@ -9,7 +9,7 @@ import PetDetails from './components/PetDetails';
 import Top from './containers/Top';
 import Bottom from './containers/Bottom';
 
-import Style from './index.module.css';
+import Style from './styles/index.module.css';
 
 const App = () => {
   const store = generateStore();

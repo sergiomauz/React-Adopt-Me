@@ -1,4 +1,4 @@
-@import "../index.module.css";
+@import "./index.module.css";
 
 .labelTitle {
   background-color: var(--red);
@@ -45,7 +45,7 @@
 
 .petPhoto {
   margin: 0 auto;
-  max-width: 350px;
+  width: 350px;
   height: 350px;
 }
 
@@ -54,13 +54,25 @@
   background-position: 50% 0;
   background-repeat: no-repeat;
   border-radius: 5px;
-  max-width: 350px;
+  width: 350px;
   height: 350px;
 }
 
-.centerImage,
 .labelName,
 .description {
   display: flex;
+  justify-content: justify;
+}
+
+.centerImage {
+  display: flex;
   justify-content: center;
+}
+
+
+@media (max-width: 545px) {
+  .petNoPhoto,
+  .petPhoto {
+    width: 95%;
+  }  
 }

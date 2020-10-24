@@ -79,7 +79,10 @@ const PetDetails = props => {
                 </ul>
               </div>
               <hr />
-              <p className={Style.description}>{animal.description}</p>
+              <h4>Description:</h4>
+              <p className={Style.description}>
+                {animal.description ? animal.description : 'Description not available.'}
+              </p>
               <div className={Style.centerImage}>
                 {
                   (animal.photos.length > 0)
