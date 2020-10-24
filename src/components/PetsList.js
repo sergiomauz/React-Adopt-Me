@@ -30,6 +30,7 @@ class PetsList extends Component {
 
     return (
       <>
+        <div className={Style.divBanner} />
         <FilterParams />
         {
           pagination && <Pagination info={pagination} />

@@ -9,9 +9,8 @@ const Bottom = () => (
           Options
         </div>
       </nav>
-      <div className={Style.tradeMark}>Holi</div>
+      <div className={Style.tradeMark}>Adopt Me Bro! Project. All right reserved</div>
     </footer>
-
   </>
 );
 

@@ -1,0 +1,15 @@
+@import "../index.module.css";
+
+.pagination {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.move {
+  width: 90px;
+  height: 30px;
+  background-color: var(--orange);
+  border: 1px solid var(--gray);
+  margin: 15px 5px 0 5px;
+  color: var(--white);
+}

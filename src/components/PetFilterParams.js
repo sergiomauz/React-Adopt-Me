@@ -58,6 +58,7 @@ const PetFilterPetsParams = props => {
 
   return (
     <>
+      <div className={Style.labelFilter}>FIND A FRIEND BY: </div>
       <div className={Style.filterContainer}>
         <label>
           <div className={Style.labelText}>City:</div>

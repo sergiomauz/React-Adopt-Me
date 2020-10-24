@@ -8,3 +8,36 @@
   width: 100%;
   list-style-type: none;
 }
+
+.divBanner {
+  height: 315px;
+  width: 100%;
+  background-image: url(../images/banner_one.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .divBanner {
+    height: 240px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 767px) {
+  .divBanner {
+    height: 240px;
+  }
+}
+
+@media (min-width: 536px) and (max-width: 649px) {
+  .divBanner {
+    height: 160px;
+  }
+}
+
+@media (max-width: 535px) {
+  .divBanner {
+    height: 160px;
+  }
+}

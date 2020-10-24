@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getPreviousPetsList, getNextPetsList } from '../actions/PetActions';
+import Style from '../styles/pagination.module.css';
 
 const mapDispatchToProps = {
   getNextPetsList,
@@ -15,23 +16,24 @@ const Pagination = props => {
 
   return (
     <>
-      {`Page ${current_page} of ${total_pages}`}
-      <br />
-      {
-        _links
-        && (
-          <>
-            {
-              _links.previous
-              && <button type="button" onClick={() => getPreviousPetsList()}>Previous</button>
-            }
-            {
-              _links.next
-              && <button type="button" onClick={() => getNextPetsList()}>Next</button>
-            }
-          </>
-        )
-      }
+      <div className={Style.pagination}>
+        <div>{`Page ${current_page} of ${total_pages}`}</div>
+        {
+          _links
+          && (
+            <>
+              {
+                _links.previous
+                && <button type="button" onClick={() => getPreviousPetsList()} className={Style.move}>🡰 Previous  </button>
+              }
+              {
+                _links.next
+                && <button type="button" onClick={() => getNextPetsList()} className={Style.move}>Next 🡲</button>
+              }
+            </>
+          )
+        }
+      </div>
     </>
   );
 };

@@ -30,8 +30,9 @@
   border-top-right-radius: 50%;
   background: var(--white);
   text-transform: uppercase;
-  font-size: 1.5rem;
-  color: var(--black);
+  font-size: 1.25rem;
+  color: var(--green);
+  font-weight: bold;
 }
 
 .cardLink:link {
