@@ -32,11 +32,9 @@ ul {
 }
 
 .pageContent {
-  border: 1px solid var(--gray);
   border-radius: 5px;
   background-color: var(--white);
   position: relative;
-  padding: 15px;
   margin: -50px auto;
 }
 

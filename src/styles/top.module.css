@@ -6,7 +6,7 @@
   width: 100px;
   height: 90px;
   margin-bottom: -60px;
-  margin-top: -5px;  
+  margin-top: -5px;
   border-radius: 10px;
 }
 
@@ -55,7 +55,7 @@
 
 .navItemBlack {
   margin: 0 5px;
-  background-color: var(--black);  
+  background-color: var(--black);
   padding: 10px;
   border-radius: 10px;
 }
@@ -79,7 +79,7 @@
 .navLinkBlack {
   color: var(--white);
   text-decoration: none;
-  margin: 3px auto; 
+  margin: 3px auto;
   text-transform: uppercase;
   font-size: 0.85rem;
 }

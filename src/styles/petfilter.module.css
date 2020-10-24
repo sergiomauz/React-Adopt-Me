@@ -5,8 +5,8 @@
   color: var(--white);
   width: max-content;
   margin-top: 15px;
-  margin-bottom: 10px;  
-  padding: 5px 15px;  
+  margin-bottom: 10px;
+  padding: 5px 15px;
 }
 
 .filterContainer {
@@ -34,6 +34,7 @@
     align-content: center;
     margin-bottom: 10px;
   }
+
   .labelFilter {
     margin-top: 10px;
   }

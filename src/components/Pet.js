@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { IMG_PETCARD } from '../helper/constants';
 import Style from '../styles/petcard.module.css';
 
 const Pet = props => {
@@ -20,11 +19,11 @@ const Pet = props => {
               }
               {
                 (info.photos.length === 0)
-                && <img src={IMG_PETCARD} alt={info.name} className={Style.petPhoto} />
+                && <div className={Style.petNoPhoto} />
               }
               <div className={Style.petName}>
                 {
-                  info.name.length > 15 ? `${info.name.slice(0, 20)} ...` : `${info.name}`
+                  info.name.length > 15 ? `${info.name.slice(0, 15)} ...` : `${info.name}`
                 }
               </div>
             </Link>
