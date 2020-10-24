@@ -38,17 +38,17 @@
   max-width: 800px;
   color: var(--white);
   margin-top: 90px;
-  display: flex;  
+  display: flex;
+}
+
+.navItem {
+  font-weight: bold;
 }
 
 .navItem:not(:first-child) {
   margin-left: 15px;
   margin-top: 5px;
   font-weight: 300;
-}
-
-.navItem {
-  font-weight: bold;
 }
 
 .navLink {

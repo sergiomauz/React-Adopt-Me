@@ -23,7 +23,7 @@
 .petNoPhoto {
   background-image: url(../images/no_image.png);
   background-position: 50% 0;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   background-size: 100px;
   border-radius: 5px;
   width: 100%;

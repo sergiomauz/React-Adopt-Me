@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getPetInfo } from '../actions/PetActions';
+import Style from '../styles/petdetails.module.css';
 
 const mapStateToProps = state => ({
   animal: state.pets.animal,
@@ -24,7 +25,7 @@ const PetDetails = props => {
 
   return (
     <>
-      <h3>PET DETAILS</h3>
+      <h3 className={Style.labelTitle}>PET DETAILS</h3>
       {
         loading
         && <span>Loading...</span>
@@ -33,29 +34,68 @@ const PetDetails = props => {
         animal
         && (
           <>
-            {`${animal.published_at.slice(0, 10)}`}
-            <br />
-            {`${animal.type} | ${animal.name} | ${animal.age} | ${animal.gender} | ${animal.size}`}
-            <br />
-            {`${animal.breeds.mixed}` ? 'Crossbred' : `${animal.breeds.primary}`}
-            <p>{animal.description}</p>
-            <img src={animal.photos[0].large} alt="" />
-            <br />
-            <div>
-              Contact:
-              <ul>
-                <li>
-                  Email:
-                  {animal.contact.email}
-                </li>
-                <li>
-                  Phone:
-                  {animal.contact.phone}
-                </li>
-                <li>
-                  {`City: ${animal.contact.address.city}, ${animal.contact.address.state}`}
-                </li>
-              </ul>
+            <div className={Style.subContainer}>
+              <h2 className={Style.labelName}>{animal.name}</h2>
+              <div className={Style.labelName}>{`Published at: ${animal.published_at.slice(0, 10)}`}</div>
+              <hr />
+              <div className={Style.dataProfileContainer}>
+                <ul className={Style.informationList}>
+                  <li className={Style.itemInfoList}>PROFILE</li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Type: </strong>
+                    {animal.type}
+                  </li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Gender: </strong>
+                    {animal.gender}
+                  </li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Age: </strong>
+                    {animal.age}
+                  </li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Size: </strong>
+                    {animal.size}
+                  </li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Breed: </strong>
+                    {`${animal.breeds.mixed}` ? 'Crossbred' : `${animal.breeds.primary}`}
+                  </li>
+                </ul>
+                <ul className={Style.informationList}>
+                  <li className={Style.itemInfoList}>CONTACT</li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Email: </strong>
+                    {animal.contact.email}
+                  </li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Phone: </strong>
+                    {animal.contact.phone}
+                  </li>
+                  <li className={Style.itemInfoList}>
+                    <strong>Location: </strong>
+                    {`${animal.contact.address.city}, ${animal.contact.address.state}`}
+                  </li>
+                </ul>
+              </div>
+              <hr />
+              <p className={Style.description}>{animal.description}</p>
+              <div className={Style.centerImage}>
+                {
+                  (animal.photos.length > 0)
+                  && (
+                    <img
+                      src={animal.photos[0].large}
+                      alt={animal.name}
+                      className={Style.petPhoto}
+                    />
+                  )
+                }
+                {
+                  (animal.photos.length === 0)
+                  && <div className={Style.petNoPhoto} />
+                }
+              </div>
             </div>
           </>
         )
