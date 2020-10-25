@@ -4,18 +4,19 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PetFinder from '../api/PetFinder';
 import { getPetsList, changePetFilterParams } from '../actions/PetActions';
+import { MANDATORY_ONCHANGE_FILTER } from '../helper/constants';
 import Style from '../styles/petfilter.module.css';
 
-const mapStateToProps = state => ({
-  filter: state.pets.filter,
-});
+// const mapStateToProps = state => ({
+//   filter: state.pets.filter,
+// });
 
 const mapDispatchToProps = {
   changePetFilterParams,
   getPetsList,
 };
 
-const PetFilterPetsParams = props => {
+const FilterParams = props => {
   const dropType = useRef(null);
   const dropSize = useRef(null);
   const dropAge = useRef(null);
@@ -29,9 +30,8 @@ const PetFilterPetsParams = props => {
   const [cities, setCities] = useState([]);
 
   const getParams = () => {
-    const newFilter = {
-      filter: {},
-    };
+    const newFilter = MANDATORY_ONCHANGE_FILTER;
+
     if (dropType.current.value.length > 0) {
       newFilter.filter.type = dropType.current.value;
     }
@@ -61,9 +61,8 @@ const PetFilterPetsParams = props => {
       <div className={Style.labelFilter}>FIND A FRIEND BY: </div>
       <div className={Style.filterContainer}>
         <label>
-          <div className={Style.labelText}>City:</div>
+          <div className={Style.labelText}>City (near to):</div>
           <select ref={dropCity} onChange={() => getParams()} className={Style.dropFilter}>
-            <option value="">All</option>
             {
               cities.map(city => (
                 <option key={city} value={city}>{city}</option>
@@ -109,9 +108,9 @@ const PetFilterPetsParams = props => {
   );
 };
 
-PetFilterPetsParams.propTypes = {
+FilterParams.propTypes = {
   changePetFilterParams: PropTypes.func.isRequired,
   getPetsList: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PetFilterPetsParams);
+export default connect(null, mapDispatchToProps)(FilterParams);

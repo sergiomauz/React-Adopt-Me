@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Style from '../styles/petcard.module.css';
 
-const Pet = props => {
+const PetCard = props => {
   const { info } = props;
 
   return (
@@ -34,7 +34,7 @@ const Pet = props => {
   );
 };
 
-Pet.propTypes = {
+PetCard.propTypes = {
   info: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
@@ -44,4 +44,4 @@ Pet.propTypes = {
   }).isRequired,
 };
 
-export default Pet;
+export default PetCard;

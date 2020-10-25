@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { ANIMAL_TYPES, ANIMAL_SIZES, ANIMAL_AGES, LOCATIONS } from '../helper/constants';
+import {
+  ANIMAL_TYPES, ANIMAL_SIZES, ANIMAL_AGES, LOCATIONS,
+} from '../helper/constants';
 import { PET_FINDER_PUBLIC_KEY, PET_FINDER_SECRET_KEY } from '../helper/keys';
 
 const PetFinder = () => {
