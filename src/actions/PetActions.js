@@ -1,4 +1,4 @@
-import { MANDATORY_ONCHANGE_FILTER } from '../helper/constants';
+import { MANDATORY_ONCHANGE_FILTER } from '../helpers/constants';
 import PetFinder from '../api/PetFinder';
 import {
   GET_PETS_LIST, GET_PET_INFO, PREVIOUS_PETS_LIST, NEXT_PETS_LIST, CHANGE_PET_FILTER,

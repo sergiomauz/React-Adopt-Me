@@ -4,12 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PetFinder from '../api/PetFinder';
 import { getPetsList, changePetFilterParams } from '../actions/PetActions';
-import { MANDATORY_ONCHANGE_FILTER } from '../helper/constants';
+import { MANDATORY_ONCHANGE_FILTER } from '../helpers/constants';
 import Style from '../styles/petfilter.module.css';
-
-// const mapStateToProps = state => ({
-//   filter: state.pets.filter,
-// });
 
 const mapDispatchToProps = {
   changePetFilterParams,

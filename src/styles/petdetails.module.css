@@ -59,20 +59,15 @@
 }
 
 .labelName,
-.description {
-  display: flex;
-  justify-content: justify;
-}
-
+.description,
 .centerImage {
   display: flex;
   justify-content: center;
 }
 
-
 @media (max-width: 545px) {
   .petNoPhoto,
   .petPhoto {
     width: 95%;
-  }  
+  }
 }
