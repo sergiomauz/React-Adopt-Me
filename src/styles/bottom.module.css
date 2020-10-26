@@ -1,5 +1,13 @@
 @import "./index.module.css";
 
+.spanOrange {
+  color: var(--orange);
+}
+
+.spanOrange:link {
+  text-decoration: none;
+}
+
 .tradeMark {
   background-color: var(--green);
   text-transform: uppercase;
@@ -47,7 +55,7 @@
 
 .navItem:not(:first-child) {
   margin-left: 15px;
-  margin-top: 5px;
+  margin-top: 15px;
   font-weight: 300;
 }
 

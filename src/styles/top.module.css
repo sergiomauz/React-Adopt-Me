@@ -36,7 +36,7 @@
   flex-wrap: wrap;
   align-items: center;
   list-style-type: none;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 10px;
 }
 
@@ -58,14 +58,20 @@
   background-color: var(--black);
   padding: 10px;
   border-radius: 10px;
-}
-
-.navItemBlack:hover {
-  background-color: var(--green);
+  color: var(--white);
 }
 
 .navItem {
   margin: 10px 5px;
+}
+
+.spanOrange {
+  color: var(--orange);
+  font-weight: bold;
+}
+
+.spanOrange:link {
+  text-decoration: none;
 }
 
 .navLink {

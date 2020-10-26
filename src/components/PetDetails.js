@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getPetInfo } from '../actions/PetActions';
 import Style from '../styles/petdetails.module.css';
@@ -98,6 +99,8 @@ const PetDetails = props => {
                   (animal.photos.length === 0)
                   && <div className={Style.petNoPhoto} />
                 }
+                <hr />
+                <Link to="/" className={Style.backLink}>🡰 Back</Link>
               </div>
             </div>
           </>

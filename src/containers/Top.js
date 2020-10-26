@@ -10,12 +10,6 @@ const Top = () => (
           <li className={Style.navItem}>
             <div className={Style.logo} />
           </li>
-          <li className={Style.navItem}>
-            <Link to="/" className={Style.navLink}>Sign up</Link>
-          </li>
-          <li className={Style.navItem}>
-            <Link to="/" className={Style.navLink}>Sign in</Link>
-          </li>
         </ul>
       </div>
     </header>
@@ -26,13 +20,8 @@ const Top = () => (
             <div />
           </li>
           <li className={Style.navItemBlack}>
-            <Link to="/" className={Style.navLinkBlack}>All Pet Care</Link>
-          </li>
-          <li className={Style.navItemBlack}>
-            <Link to="/" className={Style.navLinkBlack}>Helping Pets</Link>
-          </li>
-          <li className={Style.navItemBlack}>
-            <Link to="/" className={Style.navLinkBlack}>Donate</Link>
+            &quot;Adopt me bro!&quot; is a project of
+            <span className={Style.spanOrange}> PET FINDER</span>
           </li>
         </ul>
       </div>

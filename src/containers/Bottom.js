@@ -8,36 +8,22 @@ const Bottom = () => (
       <nav className={Style.footerNavbar}>
         <div className={Style.containerLists}>
           <ul className={Style.containerOptions}>
-            <li className={Style.navItem}>CATEGORIES</li>
+            <li className={Style.navItem}>CONTACT US:</li>
             <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Dogs</Link>
+              Phone:
+              <span className={Style.spanOrange}> +1 152 147852369</span>
             </li>
             <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Cats</Link>
+              WhatsApp:
+              <span className={Style.spanOrange}> +1 152 147852369</span>
             </li>
             <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Rabbits</Link>
+              Email:
+              <span className={Style.spanOrange}> hello@adoptmebro.com</span>
             </li>
             <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Birds</Link>
-            </li>
-            <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Other types</Link>
-            </li>
-          </ul>
-          <ul className={Style.containerOptions}>
-            <li className={Style.navItem}>INFORMATION</li>
-            <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>About us</Link>
-            </li>
-            <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Donate</Link>
-            </li>
-            <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Collaborators</Link>
-            </li>
-            <li className={Style.navItem}>
-              <Link to="/" className={Style.navLink}>Refuges</Link>
+              Address:
+              <span className={Style.spanOrange}> Spooner Avenue 2112, San Francisco, CA</span>
             </li>
           </ul>
         </div>

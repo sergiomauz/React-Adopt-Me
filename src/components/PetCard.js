@@ -12,7 +12,7 @@ const PetCard = props => {
         info
         && (
           <>
-            <Link to={`pet/${info.id}`} target="_blank" className={Style.cardLink}>
+            <Link to={`pet/${info.id}`} className={Style.cardLink}>
               {
                 (info.photos.length > 0)
                 && <img src={info.photos[0].small} alt={info.name} className={Style.petPhoto} />

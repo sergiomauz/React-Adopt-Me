@@ -58,10 +58,30 @@
   height: 350px;
 }
 
+.backLink {
+  color: var(--white);
+  background-color: var(--green);
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.backLink:link {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.backLink:hover {
+  background-color: var(--black);
+}
+
+
 .labelName,
 .description,
 .centerImage {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
