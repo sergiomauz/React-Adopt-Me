@@ -17,18 +17,18 @@ const Pagination = props => {
   return (
     <>
       <div className={Style.pagination}>
-        <div>{`Page ${current_page} of ${total_pages}`}</div>
+        <div data-testid="pageIndicator">{`Page ${current_page} of ${total_pages}`}</div>
         {
           _links
           && (
             <>
               {
                 _links.previous
-                && <button type="button" onClick={() => getPreviousPetsList()} className={Style.move}>🡰 Previous  </button>
+                && <button type="button" data-testid="previousButton" onClick={() => getPreviousPetsList()} className={Style.move}>🡰 Previous  </button>
               }
               {
                 _links.next
-                && <button type="button" onClick={() => getNextPetsList()} className={Style.move}>Next 🡲</button>
+                && <button type="button" data-testid="nextButton" onClick={() => getNextPetsList()} className={Style.move}>Next 🡲</button>
               }
             </>
           )

@@ -43,14 +43,15 @@ Click -> [ADOPT ME BRO!](https://react-adopt-me.netlify.app/)
 ## Tests
 
 - This project uses **React Testing Library** for testing classes.
-- All files are in **test** directory.
+- All files are in **src/test** directory.
+- OPTIONAL: Put your public and secret keys before to test, it will help to add testing for consuming the Pet Finder API.
 - In order to run the tests, in terminal, type: ```npm test```
 
 
 ## Potential Features
 - Full screen mode.
 - Search by city using an extra API for searching (by the moment there are only 6 cities).
-- Show more a photo album and videos of pets.
+- Show a photo album and videos in pet details.
 
 
 ## Author
@@ -61,13 +62,16 @@ Click -> [ADOPT ME BRO!](https://react-adopt-me.netlify.app/)
 - Twitter: [@sergiomauz](https://twitter.com/sergiomauz)
 - Linkedin: [Sergio Zambrano](https://www.linkedin.com/in/sergiomauz/)
 
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!. Feel free to check the [issues page](../../issues/).
 
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
 
 ## Credits
 
