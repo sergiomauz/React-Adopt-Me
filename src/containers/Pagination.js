@@ -24,7 +24,7 @@ const Pagination = props => {
             <>
               {
                 _links.previous
-                && <button type="button" data-testid="previousButton" onClick={() => getPreviousPetsList()} className={Style.move}>🡰 Previous  </button>
+                && <button type="button" data-testid="previousButton" onClick={() => getPreviousPetsList()} className={Style.move}>🡰 Previous</button>
               }
               {
                 _links.next

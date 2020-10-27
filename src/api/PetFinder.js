@@ -44,7 +44,8 @@ const PetFinder = () => {
 
     if (sessionVar.length > 0) {
       sessionObject = JSON.parse(sessionVar);
-      if (Math.abs(new Date()) > sessionObject.expires_at && sessionObject.expires_at > 0) {
+      if ((Math.abs(new Date()) > sessionObject.expires_at && sessionObject.expires_at > 0)
+        || sessionObject.expires_at === 0) {
         await requestToken();
         sessionVar = (localStorage.getItem('sessionVar') || '');
         sessionObject = JSON.parse(sessionVar);
