@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 import generateStore from './store';
 
-import Top from './containers/Top';
-import Bottom from './containers/Bottom';
-import RouteDisplayer from './containers/RouteDisplayer';
+import Top from './components/Top';
+import Bottom from './components/Bottom';
+import RouteDisplayer from './components/RouteDisplayer';
 
 const App = () => {
   const store = generateStore();

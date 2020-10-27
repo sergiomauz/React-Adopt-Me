@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import PetsList from '../components/PetsList';
-import PetDetails from '../components/PetDetails';
+import PetsList from '../containers/PetsList';
+import PetDetails from '../containers/PetDetails';
 
 import Style from '../styles/index.module.css';
 

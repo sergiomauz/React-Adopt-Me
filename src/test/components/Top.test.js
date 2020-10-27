@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render, cleanup } from '@testing-library/react';
-import Top from '../../containers/Top';
+import Top from '../../components/Top';
 
 afterEach(cleanup);
 

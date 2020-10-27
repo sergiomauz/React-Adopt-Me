@@ -4,37 +4,40 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { render, cleanup } from '@testing-library/react';
-import PetDetails from '../../components/PetDetails';
+import PetsList from '../../containers/PetsList';
 
 afterEach(cleanup);
 
 const initialState = {
   pets: {
-    animal: {
-      id: 147852369,
-      photos: [],
-      name: 'Chewbaca',
-      published_at: '2020-10-25',
-      breeds: {
-        mixed: true,
-      },
-      contact: {
-        email: '',
-        phone: '',
-        address: {
-          city: '',
-          state: '',
+    animals: [
+      {
+        id: 147852369,
+        photos: [],
+        name: 'Chewbaca',
+        published_at: '2020-10-25',
+        breeds: {
+          mixed: true,
+        },
+        contact: {
+          email: '',
+          phone: '',
+          address: {
+            city: '',
+            state: '',
+          },
         },
       },
-    },
+    ],
+    pagination: {},
   },
 };
 
 const composeEnhancers = compose;
 
-const reducer = (state = initialState, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
-    case 'GET_PET_INFO':
+    case 'GET_PETS_LIST':
       return {
         ...state,
         ...action.payload,
@@ -59,11 +62,6 @@ const renderWithRedux = (component, { store = defaultStore } = {}) => ({
 });
 
 it('Renders using Redux without crashing', () => {
-  const match = {
-    params: {
-      id: '147852369',
-    },
-  };
-  const petDetails = renderWithRedux(<PetDetails match={match} />);
-  expect(petDetails).toBeTruthy();
+  const petsList = renderWithRedux(<PetsList />);
+  expect(petsList).toBeTruthy();
 });

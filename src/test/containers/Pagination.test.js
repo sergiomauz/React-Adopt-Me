@@ -4,7 +4,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { render, cleanup } from '@testing-library/react';
-import Pagination from '../../components/Pagination';
+import Pagination from '../../containers/Pagination';
 
 afterEach(cleanup);
 

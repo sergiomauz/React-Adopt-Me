@@ -59,17 +59,20 @@
 }
 
 .backLink {
+  display: flex;
   color: var(--white);
-  background-color: var(--green);
-  width: 100px;
-  height: 50px;
+  background-color: var(--blue);
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   border-radius: 5px;
+  width: 90px;
+  height: 45px;
 }
 
 .backLink:link {
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .backLink:hover {
