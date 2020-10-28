@@ -1,3 +1,4 @@
+import { MANDATORY_ONCHANGE_FILTER } from '../helpers/constants';
 import PetFinder from '../api/PetFinder';
 import {
   GET_PETS_LIST, GET_PET_INFO, PREVIOUS_PETS_LIST, NEXT_PETS_LIST, CHANGE_PET_FILTER,
@@ -11,10 +12,7 @@ const changePetFilterParams = params => ({
 const getPetsList = () => async (dispatch, getState) => {
   let { filter } = getState().pets;
   if (!filter) {
-    filter = {
-      page: 1,
-      status: 'adoptable',
-    };
+    filter = MANDATORY_ONCHANGE_FILTER;
   }
 
   const requestedData = await PetFinder().getPetsList(filter);

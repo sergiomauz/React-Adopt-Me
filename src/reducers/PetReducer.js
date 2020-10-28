@@ -1,8 +1,9 @@
+import { MANDATORY_ONCHANGE_FILTER } from '../helpers/constants';
 import {
   GET_PETS_LIST, PREVIOUS_PETS_LIST, NEXT_PETS_LIST, GET_PET_INFO, CHANGE_PET_FILTER,
 } from '../actions/types';
 
-const initialState = {};
+const initialState = MANDATORY_ONCHANGE_FILTER;
 
 const petReducer = (state = initialState, action) => {
   switch (action.type) {
