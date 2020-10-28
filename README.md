@@ -1,68 +1,84 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ADOPT ME BRO!
+> This project implements a website that consume an API and using React & Redux shows information about pets for adopting.
 
-## Available Scripts
+## Screenshots
+![screenshot-1](https://user-images.githubusercontent.com/36812672/97098415-a796c900-164a-11eb-96de-d92b6571b4a2.png)
 
-In the project directory, you can run:
+![screenshot-2](https://user-images.githubusercontent.com/36812672/97098428-d01ec300-164a-11eb-9025-f0d273a02041.png)
 
-### `npm start`
+![screenshot-3](https://user-images.githubusercontent.com/36812672/97098438-edec2800-164a-11eb-8187-29c17c9732ca.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- List of pets with filters.
+- Page of detailed information for each pet.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Built With
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Javascript
+- React & Redux
+- Hooks
+- CSS modules
+- Netlify
+- API from [Pet Finder](https://www.petfinder.com/)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Live Demo
 
-### `npm run eject`
+Click -> [ADOPT ME BRO!](https://react-adopt-me.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to Install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Install Node JS in your system. To install Node JS, you can read the [documentation](https://nodejs.org/en/docs/).
+- Clone it using **git clone** command and move to the project directory.
+- Run in your terminal **npm install**.
+- Create an account (it is for free) in [PET FINDER](https://www.petfinder.com/), confirm your e-mail and sign in.
+- Go to Pet Finder [Developer Settings](https://www.petfinder.com/user/developer-settings/), create a new application for **localhost** (try to include the port of your preference) and copy your **api key** and **api secret** into **key.js** file (which is in the **src/helpers** directory).
+- Run in your terminal **npm start** and wait for your browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- This project uses **React Testing Library** for testing classes.
+- All files are in **src/test** directory.
+- OPTIONAL: Put your public and secret keys before to test, it will help to add testing for consuming the Pet Finder API.
+- In order to run the tests, in terminal, type: ```npm test```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Potential Features
+- Full screen mode.
+- Search by city using an extra API for searching (by the moment there are only 6 cities).
+- Show a photo album and videos in pet details.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+👤 **Sergio Zambrano**
 
-### Making a Progressive Web App
+- Github: [@sergiomauz](https://github.com/sergiomauz)
+- Twitter: [@sergiomauz](https://twitter.com/sergiomauz)
+- Linkedin: [Sergio Zambrano](https://www.linkedin.com/in/sergiomauz/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## 🤝 Contributing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Contributions, issues and feature requests are welcome!. Feel free to check the [issues page](../../issues/).
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Show your support
 
-### `npm run build` fails to minify
+Give a ⭐️ if you like this project!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Credits
+
+- The user interface [Pimp my DOG](https://www.behance.net/gallery/24531031/Pimp-my-DOG-Online-store-E-commerse-project) was designed by [Denys Chagaida](https://www.behance.net/chagaida).
+- The API **PET FINDER**, which was used as backend is available in its website [here](https://www.petfinder.com/developers/).
+
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.

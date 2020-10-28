@@ -11,6 +11,9 @@
 # production
 /build
 
+# keys
+/src/helpers/keys.js.bak
+
 # misc
 .DS_Store
 .env.local

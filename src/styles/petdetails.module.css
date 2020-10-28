@@ -1,0 +1,95 @@
+@import "./index.module.css";
+
+.labelTitle {
+  background-color: var(--red);
+  color: var(--white);
+  width: max-content;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+}
+
+.subContainer {
+  width: 95%;
+  margin: 15px auto;
+}
+
+.dataProfileContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.informationList {
+  margin: 0 auto;
+  list-style: none;
+}
+
+.itemInfoList {
+  margin-top: 10px;
+}
+
+.itemInfoList:first-child {
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--orange);
+  color: var(--white);
+  border-radius: 10px;
+}
+
+.itemInfoList:not(:first-child) {
+  margin-left: 15px;
+  font-weight: normal;
+  background-color: transparent;
+}
+
+.petPhoto {
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+}
+
+.petNoPhoto {
+  background-image: url(../images/no_image.png);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  width: 350px;
+  height: 350px;
+}
+
+.backLink {
+  display: flex;
+  color: var(--white);
+  background-color: var(--blue);
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 90px;
+  height: 45px;
+}
+
+.backLink:link {
+  text-decoration: none;
+}
+
+.backLink:hover {
+  background-color: var(--black);
+}
+
+.labelName,
+.description,
+.centerImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 545px) {
+  .petNoPhoto,
+  .petPhoto {
+    width: 95%;
+  }
+}

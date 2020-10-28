@@ -1,0 +1,41 @@
+@import "./index.module.css";
+
+.labelFilter {
+  background-color: var(--red);
+  color: var(--white);
+  width: max-content;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+}
+
+.filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray);
+}
+
+.dropFilter {
+  height: 32px;
+  border-radius: 5px;
+  min-width: 175px;
+  margin-bottom: 10px;
+  border: 1px solid var(--gray);
+}
+
+.labelText {
+  width: 120px;
+}
+
+@media (max-width: 545px) {
+  .filterContainer {
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 10px;
+  }
+
+  .labelFilter {
+    margin-top: 10px;
+  }
+}
